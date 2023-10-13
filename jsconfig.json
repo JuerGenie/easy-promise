@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "target": "ESNext",
+    "module": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "nodenext",
+    "baseUrl": "."
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules"],
+  "typeAcquisition": {
+    "include": ["ava"]
+  }
+}
