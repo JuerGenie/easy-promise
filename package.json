@@ -1,5 +1,5 @@
 {
-  "name": "easy-promise",
+  "name": "simple-promising",
   "version": "0.1.0",
   "description": "Easy to use promise, friendly to async/await and promisify everything.",
   "type": "module",
@@ -20,7 +20,7 @@
     "name": "JuerGenie",
     "email": "juergenie@qq.com"
   },
-  "homepage": "https://github.com/JuerGenie/easy-promise",
+  "homepage": "https://github.com/JuerGenie/simple-promising",
   "license": "MIT",
   "devDependencies": {
     "ava": "^5.3.1",

@@ -1,32 +1,32 @@
-# 1. What is `easy-promise`?
+# 1. What is `simple-promising`?
 
-`easy-promise` is a simple `Promise` utility module that provides an easy pattern for managing when a `Promise` should `resolve` and when it should `reject`, and can easily `promisify` anything.
+`simple-promising` is a simple `Promise` utility module that provides an easy pattern for managing when a `Promise` should `resolve` and when it should `reject`, and can easily `promisify` anything.
 
-# 2. How to use `easy-promise`?
+# 2. How to use `simple-promising`?
 
-Using `easy-promise` is very simple. You can install it by running the following command:
+Using `simple-promising` is very simple. You can install it by running the following command:
 
 ```bash
-npm install easy-promise
+npm install simple-promising
 ```
 
-Then, you can import `easy-promise` into your project with the following code:
+Then, you can import `simple-promising` into your project with the following code:
 
 ```javascript
-import easyPromise from 'easy-promise';
+import simplePromising from 'simple-promising';
 ```
 
-Alternatively, you can import the `EasyPromise` class with the following code:
+Alternatively, you can import the `SimplePromising` class with the following code:
 
 ```javascript
-import { EasyPromise } from 'easy-promise';
+import { SimplePromising } from 'simple-promising';
 ```
 
 # 3. `API` and example code
 
-## `EasyPromise` class
+## `SimplePromising` class
 
-The `EasyPromise` class is a custom `Promise` class that provides a simple pattern for managing when a `Promise` should `resolve` and when it should `reject`.
+The `SimplePromising` class is a custom `Promise` class that provides a simple pattern for managing when a `Promise` should `resolve` and when it should `reject`.
 
 ### Constructor
 
@@ -34,7 +34,7 @@ The `EasyPromise` class is a custom `Promise` class that provides a simple patte
 > constructor()
 > ```
 >
-> Creates a new instance of `EasyPromise`.
+> Creates a new instance of `SimplePromising`.
 
 ### Properties
 
@@ -42,26 +42,26 @@ The `EasyPromise` class is a custom `Promise` class that provides a simple patte
 > resolve: (value: MaybePromise<T>) => void;
 > ```
 >
-> A function that sets the state of the `EasyPromise` instance to `fulfilled`.
+> A function that sets the state of the `SimplePromising` instance to `fulfilled`.
 
 > ```javascript
 > reject: (reason: any) => void;
 > ```
 >
-> A function that sets the state of the `EasyPromise` instance to `rejected`.
+> A function that sets the state of the `SimplePromising` instance to `rejected`.
 
 > ```javascript
 > promise: Promise<T>;
 > ```
 >
-> A `Promise` instance that represents the state of the `EasyPromise` instance.
+> A `Promise` instance that represents the state of the `SimplePromising` instance.
 
 ### Example code
 
 ```javascript
-import { EasyPromise } from 'easy-promise';
+import { SimplePromising } from 'simple-promising';
 
-const myPromise = new EasyPromise();
+const myPromise = new SimplePromising();
 
 myPromise.resolve('Hello, world!');
 
@@ -70,24 +70,24 @@ myPromise.promise.then((value) => {
 });
 ```
 
-## `easyPromise` function
+## `simplePromising` function
 
-The `easyPromise` function is a factory function that creates a new `EasyPromise` instance.
+The `simplePromising` function is a factory function that creates a new `SimplePromising` instance.
 
 ### Return value
 
 ```javascript
-EasyPromise<T>
+SimplePromising<T>
 ```
 
-A new `EasyPromise` instance.
+A new `SimplePromising` instance.
 
 ### Example code
 
 ```javascript
-import { easyPromise } from 'easy-promise';
+import { simplePromising } from 'simple-promising';
 
-const myPromise = easyPromise();
+const myPromise = simplePromising();
 
 myPromise.resolve('Hello, world!');
 
@@ -98,10 +98,10 @@ myPromise.promise.then((value) => {
 
 ## Usage examples
 
-### Promisify
+### `Promisify`
 
 ```javascript
-import easyPromise from "easy-promise";
+import simplePromising from "simple-promising";
 
 function doSomething(cb) {
   setTimeout(() => {
@@ -109,23 +109,23 @@ function doSomething(cb) {
   }, 500);
 }
 
-const ep = easyPromise();
-doSomething((err, value) => err ? ep.reject(err) : ep.resolve(value));
-console.log(await ep.promise);
+const sp = simplePromising();
+doSomething((err, value) => err ? sp.reject(err) : sp.resolve(value));
+console.log(await sp.promise);
 ```
 
 ### Wait for event
 
 ```javascript
-import easyPromise from "easy-promise";
+import simplePromising from "simple-promising";
 import { EventEmitter } from "eventemitter3";
 
 const ee = new EventEmitter();
 
 function when(event) {
-  const ep = easyPromise();
-  ee.once(event, (...args) => ep.resolve(args));
-  return ep.promise;
+  const sp = simplePromising();
+  ee.once(event, (...args) => sp.resolve(args));
+  return sp.promise;
 }
 
 when("ready").then((args) => {
@@ -137,4 +137,6 @@ setTimeout(() => {
 });
 
 // Output: 'It's ok!' '42'
+```
+
 ```

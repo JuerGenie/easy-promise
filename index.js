@@ -6,7 +6,7 @@
 /**
  * @template T
  */
-export class EasyPromise {
+export class SimplePromising {
   /**
    * @type {(value: MaybePromise<T>) => void}
    * @param {MaybePromise<T>} value
@@ -44,10 +44,10 @@ export class EasyPromise {
 
 /**
  * @template T
- * @returns {EasyPromise<T>}
+ * @returns {SimplePromising<T>}
  */
-export function easyPromise() {
-  return new EasyPromise();
+export function simplePromising() {
+  return new SimplePromising();
 }
 
-export default easyPromise;
+export default simplePromising;

@@ -1,16 +1,16 @@
 import test from "ava";
-import { EasyPromise } from "./index.js";
+import { SimplePromising } from "./index.js";
 
-test("EasyPromise: create an instance", (t) => {
+test("SimplePromising: create an instance", (t) => {
   t.plan(1);
   t.notThrows(() => {
-    new EasyPromise();
+    new SimplePromising();
   });
 });
 
-test("EasyPromise: resolve with value", async (t) => {
+test("SimplePromising: resolve with value", async (t) => {
   t.plan(1);
-  const ep = new EasyPromise();
+  const ep = new SimplePromising();
   setTimeout(() => {
     ep.resolve("Hello, world!");
   });
@@ -18,9 +18,9 @@ test("EasyPromise: resolve with value", async (t) => {
   t.is(result, "Hello, world!");
 });
 
-test("EasyPromise: resolve with promise", async (t) => {
+test("SimplePromising: resolve with promise", async (t) => {
   t.plan(1);
-  const ep = new EasyPromise();
+  const ep = new SimplePromising();
   setTimeout(() => {
     ep.resolve(Promise.resolve("Hello, world!"));
   });
@@ -28,9 +28,9 @@ test("EasyPromise: resolve with promise", async (t) => {
   t.is(result, "Hello, world!");
 });
 
-test("EasyPromise: reject with error", async (t) => {
+test("SimplePromising: reject with error", async (t) => {
   t.plan(1);
-  const ep = new EasyPromise();
+  const ep = new SimplePromising();
   const error = new TypeError("Something went wrong");
   setTimeout(() => {
     ep.reject(error);
@@ -42,9 +42,9 @@ test("EasyPromise: reject with error", async (t) => {
   }
 });
 
-test("EasyPromise: resolve with value after 1sec delay", async (t) => {
+test("SimplePromising: resolve with value after 1sec delay", async (t) => {
   t.plan(1);
-  const ep = new EasyPromise();
+  const ep = new SimplePromising();
   setTimeout(() => {
     ep.resolve("Hello, world!");
   }, 1000);
@@ -52,9 +52,9 @@ test("EasyPromise: resolve with value after 1sec delay", async (t) => {
   t.is(result, "Hello, world!");
 });
 
-test("EasyPromise: reject with error after 1sec delay", async (t) => {
+test("SimplePromising: reject with error after 1sec delay", async (t) => {
   t.plan(1);
-  const ep = new EasyPromise();
+  const ep = new SimplePromising();
   const error = new TypeError("Something went wrong");
   setTimeout(() => {
     ep.reject(error);
