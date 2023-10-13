@@ -20,6 +20,7 @@
     "name": "JuerGenie",
     "email": "juergenie@qq.com"
   },
+  "homepage": "https://github.com/JuerGenie/easy-promise",
   "license": "MIT",
   "devDependencies": {
     "ava": "^5.3.1",
