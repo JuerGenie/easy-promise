@@ -1,15 +1,19 @@
 {
   "name": "simple-promising",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easy to use promise, friendly to async/await and promisify everything.",
   "type": "module",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "generate": "tsc"
   },
   "ava": {
     "files": [
       "**/*.spec.js"
     ]
+  },
+  "exports": {
+    ".": "./index.js"
   },
   "keywords": [
     "promise",
